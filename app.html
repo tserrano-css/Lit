@@ -17,7 +17,7 @@
             <h1 slot="title">Nav title</h1>
         </div> 
         <dile-menu-hamburger direction="left" slot="menu">
-            <dile-selector slot="menu" selected="home" attrForSelected="name">
+            <dile-selector id="mainselector" slot="menu" selected="home" attrForSelected="name" selectorId="selector">
                 <dile-selector-item icon="navigate_next" name="home">Home</dile-selector-item>
                 <dile-selector-item icon="navigate_next" name="users">Usuarios</dile-selector-item>
                 <dile-selector-item icon="navigate_next" name="contact">Contacto</dile-selector-item>
@@ -25,7 +25,7 @@
         </dile-menu-hamburger>
     </dile-nav>
 
-    <dile-pages selected="home" attrforselected="name">
+    <dile-pages selected="home" attrforselected="name" selectorId="selector">
         <div name="home">
             <h2>Bienvenidos a mi web</h2>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde excepturi atque, et quaerat vero saepe maiores, maxime dolore officiis earum cumque temporibus tenetur, possimus deserunt magni itaque! Reiciendis, assumenda quo?</p>
