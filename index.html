@@ -9,9 +9,20 @@
 <body>
     <h1>CURSO DE LIT</h1>
     <eit-counter counter="10"></eit-counter>
-    <eit-counter counter="0"></eit-counter>
+    <eit-counter counter="0" id="counter"></eit-counter>
+    <button id="reset">Reset</button>
+    <br>
     <dw-message></dw-message>
 
     <script src="index.js" type="module"></script>
+    <script>
+        document.getElementById('reset').addEventListener('click', () => {
+            document.getElementById('counter').counter = 0
+            //document.querySelector('eit-counter').reset();
+            const counter = document.createElement('eit-counter');
+            counter.setAttribute('quantity', '1000');
+            document.body.appendChild(counter);
+        });
+    </script>
 </body>
 </html>

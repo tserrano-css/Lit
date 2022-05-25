@@ -19,7 +19,7 @@ export class EitCounter extends LitElement {
         font-size: 1.5rem;
       }
       wired-input {
-        width: 50px;
+        width: 100px;
         font-size: 1em;
         padding: 0.5em;
       }
