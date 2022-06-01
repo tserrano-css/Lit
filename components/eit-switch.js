@@ -6,12 +6,10 @@ export class EitSwitch extends LitElement {
             :host {
                 display: block;
                 font-size: 1.5em;
-            }
-            .on {
-                color: green;
-            }
-            .off {
                 color: red;
+            }
+            :host([checked]) {
+                color: green;
             }
         `
     ];
@@ -27,8 +25,7 @@ export class EitSwitch extends LitElement {
 
     render() {
         return html`
-            <p class="${this.checked ? 'on' : 'off'}">switch</p>
-            ${this.checked ? html`<b class="on">on</b>` : html`<b class="off">off</b>`}
+            ${this.checked ? html`<b>on</b>` : html`<b>off</b>`}
         `;
     }
 }
