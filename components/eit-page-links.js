@@ -1,29 +1,11 @@
 import { LitElement, html, css } from 'lit';
+import { pagesStyles } from './styles/page-styles';
 
 export class EitPageLinks extends LitElement {
   static styles = [
+    pagesStyles,
     css`
-      :host {
-        display: block;
-      }
-      ul {
-        display: flex;
-        margin: 0;
-        padding: 0;
-      }
-      li {
-        padding: 0.5em;
-        border: 1px solid #ccc;
-        background-color: #eee;
-        list-style: none;
-        margin-right: 0.5em;
-        min-width: 1em;
-        text-align: center;
-      }
-      li.selected {
-        background-color: #d33;
-        color: #fff;
-      }
+      
     `,
   ];
 
