@@ -7,8 +7,20 @@
     <title>CURSO DE LIT</title>
 
     <style>
+        html {
+            --eit-switch-off-state-color: #eee;
+            --eit-switch-on-state-color: #8f8;
+            --eit-switch-bar-color: #aac;
+        }
+        eit-card {
+            --eit-switch-off-state-color: rgb(235, 44, 200);
+            --eit-switch-on-state-color: rgb(220, 250, 25);
+        }
         p {
             margin: 0;
+        }
+        li {
+            border: 5px solid orange;
         }
     </style>
 </head>
@@ -29,6 +41,7 @@
         </ul>
         <div slot="actions">
             <a href="#">Accion 1</a>
+            <eit-switch checked></eit-switch>
         </div>
     </eit-card>
     <br>

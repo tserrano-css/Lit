@@ -6,7 +6,11 @@ export class EitPageLinksNumpages extends LitElement {
     pagesStyles,
     css`
       :host {
-        border: 1px solid #ccc;
+        border: 3px solid red;
+      }
+      li.selected {
+        background-color: #32bd16;
+      }
     `,
   ];
 
@@ -33,10 +37,8 @@ export class EitPageLinksNumpages extends LitElement {
 
   createPageTemplate() {
     const templates = [];
-    for(let i = 1; i <= this.numPages; i++) {
-      templates.push(html`
-        <li class="${i === this.selectedPage ? 'selected' : ''}">${i}</li>  
-      `)
+    for (let i = 1; i <= this.numPages; i++) {
+      templates.push(html` <li class="${i === this.selectedPage ? "selected" : ""}">${i}</li> `);
     }
     return templates;
   }
