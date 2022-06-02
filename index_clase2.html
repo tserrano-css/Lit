@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CURSO DE LIT</title>
+
+    <style>
+        html {
+            --eit-switch-off-state-color: #eee;
+            --eit-switch-on-state-color: #8f8;
+            --eit-switch-bar-color: #aac;
+        }
+        eit-card {
+            --eit-switch-off-state-color: rgb(235, 44, 200);
+            --eit-switch-on-state-color: rgb(220, 250, 25);
+        }
+        p {
+            margin: 0;
+        }
+        li {
+            border: 5px solid orange;
+        }
+    </style>
+</head>
+<body>
+    <h1>CURSO DE LIT</h1>
+    <eit-counter counter="10"></eit-counter>
+    <eit-counter counter="0" id="counter"></eit-counter>
+    <button id="reset">Reset</button>
+    <br>
+    <dw-message></dw-message>
+    <br>
+    <eit-card>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, temporibus consequuntur quo cumque repellat iure optio architecto quidem praesentium totam natus eaque dicta vero ipsum, cupiditate dolor vitae at animi.</p>
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+        </ul>
+        <div slot="actions">
+            <a href="#">Accion 1</a>
+            <eit-switch checked></eit-switch>
+        </div>
+    </eit-card>
+    <br>
+    <eit-card title="Esto es un título"></eit-card>
+    <br>
+    <eit-switch checked></eit-switch>
+    <br>
+    <eit-page-links></eit-page-links>
+    <br>
+    <eit-page-links-numpages numPages="15" selectedPage = "3"></eit-page-links-numpages>
+    
+
+    <script src="./components/index.js" type="module"></script>
+    <script>
+        document.getElementById('reset').addEventListener('click', () => {
+            document.getElementById('counter').counter = 0
+            //document.querySelector('eit-counter').reset();
+            const counter = document.createElement('eit-counter');
+            counter.setAttribute('quantity', '1000');
+            document.body.appendChild(counter);
+        });
+    </script>
+</body>
+</html>
