@@ -5,31 +5,51 @@ export class EitPageLinks extends LitElement {
   static styles = [
     pagesStyles,
     css`
-      
+      :host {
+        display: block;
+        margin-bottom: 1rem;
+      }
+      li.selected {
+        background-color: #32bd16;
+      }
     `,
   ];
 
   static get properties() {
     return {
       pages: { type: Array },
-      selectedPage: { type: Number },
+      selectedPage: { type: String },
     };
   }
 
   constructor() {
     super();
-    this.pages = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-    this.selectedPage = 1;
+    this.pages = [];
+    this.selectedPage = 0;
   }
 
   render() {
     return html`
       <ul>
         ${this.pages.map((page) => html`
-            <li class="${page === this.selectedPage ? 'selected' : ''}">${page}</li>
+            <li 
+              @click=${() => this.setPage(page)}
+              class="${page == this.selectedPage ? 'selected' : ''}"
+            >${page}</li>
         `)}
       </ul>
     `;
+  }
+
+  setPage(page) {
+    this.selectedPage = page;
+    this.dispatchEvent(new CustomEvent('eit-page-links-change', {
+      bubbles: true,
+      composed: true,
+      detail: {
+        selectedPage: this.selectedPage,
+      },
+    }));
   }
 }
 customElements.define('eit-page-links', EitPageLinks);

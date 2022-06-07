@@ -11,7 +11,12 @@ export class EitProp extends LitElement {
 
     static get properties() {
         return {
-            propString: { type: String },
+            propString: { type: String, 
+                converter: {
+                    fromAttribute: (value, type) => {
+                        return '--' + value + '--';
+                    },
+                } },
             propNumber: { type: Number },
         };
     }
