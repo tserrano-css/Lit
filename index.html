@@ -4,20 +4,41 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Lit en EscuelaIT</title>
 
-    <script>
-    
-    </script>
+    <style>
+        .menu p {
+            margin: 0;
+        }
+    </style>
 </head>
 <body>
     <h1>Lit.dev</h1>
 
-    <eit-page-switch></eit-page-switch>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci dolore rem ducimus facilis quidem harum beatae nostrum quis soluta dignissimos minus molestias sint officia perferendis aut rerum, ut necessitatibus cum?</p>
+    
+    <eit-menu-overlay>
+        <spam slot="trigger">Menu</spam>
+        <div class="menu" slot="menu">
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minima nobis, architecto quos necessitatibus dignissimos ut, sapiente obcaecati error praesentium illum adipisci veniam illo magnam debitis blanditiis animi non sint eveniet? </p>
+        </div> 
+    </eit-menu-overlay>
 
-    <!-- <eit-page-links pages="[1,4,8]" selectedPage="4"></eit-page-links> -->
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit, quia quis aliquid reiciendis mollitia quo eligendi vero qui hic repellat eveniet eum accusantium unde, dignissimos, nisi tenetur provident minima debitis.</p>
+    
+    <eit-show-click clientX = "5" clientY="100"></eit-show-click>
 
     <script src="./components/index.js" type="module"></script>
-    
+    <button>Quitar elemento</button>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const menu = document.createElement('eit-menu-overlay');
+
+            document.querySelector('button').addEventListener('click', () => {
+                document.querySelector('eit-show-click').remove();
+               // menu.remove();
+            });
+        });
+    </script>
 </body>
 </html>
