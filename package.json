@@ -13,6 +13,7 @@
     "@web/dev-server": "^0.1.31"
   },
   "dependencies": {
+    "@dile/dile-checkbox": "^2.2.4",
     "@dile/dile-input": "^1.1.0",
     "@dile/dile-menu-hamburger": "^2.0.2",
     "@dile/dile-nav": "^0.1.2",

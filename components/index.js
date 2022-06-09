@@ -7,3 +7,4 @@ import './eit-card.js';
 import './eit-page-switch.js';
 import './eit-menu-overlay.js';
 import './eit-show-click.js';
+import './dw-input-checkbox.js';

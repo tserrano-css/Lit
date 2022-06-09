@@ -66,7 +66,7 @@ export class EitMenuOverlay extends LitElement {
   }
 
   close() {
-    console.log('close en menu overlay', this);
+    //console.log('close en menu overlay', this);
     this.opened = false;
   }
 }

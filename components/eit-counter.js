@@ -32,12 +32,19 @@ export class EitCounter extends LitElement {
       wired-card {
         margin: 1em;
         padding: 1em;
-    }
+      }
     `,
   ];
 
   static properties = {
-    counter: { type: Number, reflect: true },
+    counter: {
+      type: Number,
+      reflect: true,
+      hasChanged: (newValue, oldValue) => {
+        //refresca el contador solo para multiples de 5
+        return newValue % 5 === 0;
+      }
+    },
     quantity: { type: Number },
   };
 
@@ -45,6 +52,10 @@ export class EitCounter extends LitElement {
     super();
     this.counter = 0;
     this.quantity = 10;
+  }
+
+  updated(changedProperties) {
+    console.log("updated ejecutado...");
   }
 
   render() {
@@ -71,7 +82,7 @@ export class EitCounter extends LitElement {
   //}
 
   doChangeQuantity(event) {
-      this.quantity = event.detail.value;
+    this.quantity = event.detail.value;
   }
 
   increment() {

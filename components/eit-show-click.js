@@ -10,20 +10,22 @@ export class EitShowClick extends LitElement {
   ];
 
   static get properties() {
-      return {
-          clientX: { type: Number },
-          clientY: { type: Number },
-      };
+    return {
+      clientX: { type: Number },
+      clientY: { type: Number },
+      foo: { type: String },
+    };
   }
 
-    constructor() { 
-        super();
-        this.clientX = 0;
-        this.clientY = 0;
-        this.clickHandler = this.showClickPosition.bind(this);
-        console.log(this.clientX, this.clientY);
-    }
+  constructor() {
+    super();
+    this.clientX = 0;
+    this.clientY = 0;
+    this.clickHandler = this.showClickPosition.bind(this);
+    console.log(this.clientX, this.clientY);
+  }
 
+  
   connectedCallback() {
     super.connectedCallback();
     console.log("connectedCallback ejecutado...");
@@ -44,16 +46,23 @@ export class EitShowClick extends LitElement {
     document.removeEventListener("click", this.clickHandler);
   }
 
+  updated(changedProperties) {
+    if (changedProperties.has('clientX')) {
+      console.log(`clientX valia ${changedProperties.get('clientX')} y ahora vale ${this.clientX}`);
+    }
+  }
+
   render() {
-    return html` 
-        <p>Han hecho clic en ${this.clientX} x ${this.clientY}</p>
-        <p>input: <input id="elinput" type="text" value="${this.clientX}"/></p>    
+    return html`
+      <p>Han hecho clic en ${this.clientX} x ${this.clientY}</p>
+      <p>input: <input id="elinput" type="text" value="${this.clientX}" /></p>
     `;
   }
 
   showClickPosition(e) {
     this.clientX = e.clientX;
     this.clientY = e.clientY;
+    console.log("showClickPosition ejecutado...", this.clientX);
   }
 }
 customElements.define('eit-show-click', EitShowClick);
