@@ -40,10 +40,11 @@ export class EitCounter extends LitElement {
     counter: {
       type: Number,
       reflect: true,
+      /*
       hasChanged: (newValue, oldValue) => {
         //refresca el contador solo para multiples de 5
         return newValue % 5 === 0;
-      }
+      }*/
     },
     quantity: { type: Number },
   };

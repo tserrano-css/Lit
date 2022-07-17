@@ -8,3 +8,5 @@ import './eit-page-switch.js';
 import './eit-menu-overlay.js';
 import './eit-show-click.js';
 import './dw-input-checkbox.js';
+import './eit-clock.js';
+import './eit-user-list.js';
