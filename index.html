@@ -5,14 +5,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clase 5 Lit</title>
+    <style>
+        .menu p {
+            margin: 0;
+        }
+        div {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }      
+    </style>
 </head>
 <body>
     <h1>Lit.dev</h1>
 
     <eit-clock></eit-clock>
 
-    <eit-user-list></eit-user-list>
-
+    <div>
+        <eit-user-list></eit-user-list>
+        <eit-user-list-optimized></eit-user-list-optimized>
+    </div>
+    
     <script src="./components/index.js" type="module"></script>
     
 </body>
