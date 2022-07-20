@@ -2,8 +2,9 @@ import { LitElement, html, css } from "lit";
 import "./eit-user.js";
 import "./eit-page-links.js";
 import { users } from "../users.js";
+import { PerformanceMixin } from "../mixins/performanceMixin.js";
 
-export class EitUserList extends LitElement {
+export class EitUserList extends PerformanceMixin(LitElement) {
   static styles = [
     css`
       :host {
@@ -31,7 +32,6 @@ export class EitUserList extends LitElement {
     //   .then((response) => response.json())
     //   .then((users) => this.users =users);
 
-    this.times = 0;
     //para no perder tiempo en la ordenación, cacheamos los datos en dos nuevos arrays ya ordenados
     //no son propiedades reactivas, son propiedades de clase
     this.usersAsc = [
@@ -55,15 +55,15 @@ export class EitUserList extends LitElement {
 
   change100Times() {
     if (this.times === 0) {
-      this.timeStart = performance.now(); //milisegundos de la hora actual
+      this.startTime();
     }
     if (this.times < 100) {
       this.times++;
       this.ordererUsers = this.times % 2 === 0 ? this.usersAsc : this.usersDesc;
       this.updateComplete.then(() => this.change100Times());
     } else {
-      this.timeEnd = performance.now();
-      console.log(`Tiempo de ejecución: ${this.timeEnd - this.timeStart} ms`);
+      this.endTime();
+      this.reportPerformance();
       this.times = 0;
     }
   }
@@ -79,8 +79,13 @@ export class EitUserList extends LitElement {
       ></eit-page-links>
 
       ${this.mapRepeatTemplate}
+      <!-- ${this.footerTemplate} -->
     `;
   }
+
+  // get footerTemplate() {
+  //   return html`---`;
+  // }
 
   get mapRepeatTemplate() {
     return html`
