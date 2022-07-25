@@ -12,3 +12,10 @@ https://github.com/EscuelaIt/curso-lit
 componentes:
 https://github.com/web-padawan/awesome-lit
 https://wiredjs.com/
+
+Open-WC: https://open-wc.org
+Herramientas para hacer componentes mas profesionales
+
+Extension de web components devtools: Web Component devtools:
+https://github.com/Matsuuu/web-component-devtools
+https://chrome.google.com/webstore/detail/web-component-devtools/gdniinfdlmmmjpnhgnkmfpffipenjljo
