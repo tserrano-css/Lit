@@ -16,6 +16,8 @@ https://wiredjs.com/
 Open-WC: https://open-wc.org
 Herramientas para hacer componentes mas profesionales
 
+https://modern-web.dev
+
 Extension de web components devtools: Web Component devtools:
 https://github.com/Matsuuu/web-component-devtools
 https://chrome.google.com/webstore/detail/web-component-devtools/gdniinfdlmmmjpnhgnkmfpffipenjljo

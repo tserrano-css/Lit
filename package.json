@@ -19,6 +19,7 @@
     "@dile/dile-nav": "^0.1.2",
     "@dile/dile-pages": "^1.3.0",
     "@dile/dile-selector": "^1.0.0",
+    "eit-info-overlay": "^0.0.1",
     "wired-elements": "^3.0.0-rc.6"
   }
 }
