@@ -11,4 +11,5 @@ import './dw-input-checkbox.js';
 import './eit-clock.js';
 import './eit-user-list.js';
 import './eit-user-list-optimized.js';
-import 'eit-info-overlay/eit-info-overlay.js'
+import 'eit-info-overlay/eit-info-overlay.js';
+import './overlay-form';

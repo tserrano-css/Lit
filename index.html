@@ -28,7 +28,16 @@
                 Esto es la informacióna
             </div>
         </eit-info-overlay>
+
+        <eit-info-overlay id="overlay1" horizontalAlign="left" moveLeft="40">
+            <form id="f1">
+                    <input type="text" name="name" placeholder="Name">
+                    <button>Enviar</button>
+                </form>
+        </eit-info-overlay>
     </div>
+
+    <overlay-form></overlay-form>
 
     <eit-clock></eit-clock>
 
@@ -36,6 +45,14 @@
         <eit-user-list></eit-user-list>
         <eit-user-list-optimized></eit-user-list-optimized>
     </div>
+
+    <script>
+        document.getElementById('f1').addEventListener('submit', function(e){
+            e.preventDefault();
+            e.stopPropagation();
+            document.getElementById('overlay1').close();
+        })
+    </script>
     
     <script src="./components/index.js" type="module"></script>
     
